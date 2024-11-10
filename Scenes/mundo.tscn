@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmd86rw6lhq8x"]
+
+[ext_resource type="PackedScene" uid="uid://c26fdxgxunjir" path="res://Scenes/ale.tscn" id="1_qb1my"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_raijv"]
+
+[node name="Mundo" type="Node2D"]
+
+[node name="Ale" parent="." instance=ExtResource("1_qb1my")]
+position = Vector2(31, -26)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -188)
+zoom = Vector2(1.2, 1.2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_raijv")
