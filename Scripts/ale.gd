@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
 
-@export var speed = 450
+@export var speed = 300
 @export var jump = -400
-
-#Hola!
+@export var dead = 1000
 
 var gravity= 980
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+func _process(delta):
+	if position.y > dead:
+		get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
 
 
 func _physics_process(delta: float) -> void:
