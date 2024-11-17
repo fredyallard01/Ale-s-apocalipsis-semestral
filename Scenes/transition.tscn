@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbqaa1hsunjfx"]
+
+[ext_resource type="Script" path="res://transition.gd" id="1_po6kk"]
+[ext_resource type="Texture2D" uid="uid://b5xm4ptsda81c" path="res://Assets/Tiles/GreenGround-Objects/pointer.png" id="2_33dlr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a17ad"]
+size = Vector2(26, 52)
+
+[node name="transition" type="Area2D"]
+script = ExtResource("1_po6kk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a17ad")
+
+[node name="Pointer" type="Sprite2D" parent="."]
+position = Vector2(-1, 1)
+texture = ExtResource("2_33dlr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
