@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c26fdxgxunjir" path="res://Scenes/ale.tscn" id="5_bnnnj"]
 [ext_resource type="PackedScene" uid="uid://bc3pki1p5ib2u" path="res://Scenes/coin_bronze_star.tscn" id="6_e4g0g"]
 [ext_resource type="Texture2D" uid="uid://b5xm4ptsda81c" path="res://Assets/Tiles/GreenGround-Objects/pointer.png" id="6_hxlor"]
-[ext_resource type="PackedScene" uid="uid://ecbgknclgulp" path="res://Scenes/bg.tscn" id="7_rlucj"]
+[ext_resource type="PackedScene" uid="uid://cjphpq3omg2ri" path="res://Scenes/bg - apocalypse.tscn" id="9_ax3sl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e61mo"]
 texture = ExtResource("1_xott5")
@@ -1499,8 +1499,6 @@ frame_progress = 0.408518
 position = Vector2(1179.97, 521.1)
 frame_progress = 0.408518
 
-[node name="Bg_level_1" parent="." instance=ExtResource("7_rlucj")]
-
 [node name="transition" type="Area2D" parent="."]
 position = Vector2(5435, 532)
 
@@ -1513,6 +1511,8 @@ shape = SubResource("RectangleShape2D_g7ox7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact"]
 position = Vector2(2840, 687)
 shape = SubResource("RectangleShape2D_s4y32")
+
+[node name="Bg_level_apocalypse" parent="." instance=ExtResource("9_ax3sl")]
 
 [connection signal="body_entered" from="transition" to="." method="_on_transition_body_entered"]
 [connection signal="body_exited" from="interact" to="." method="_on_interact_body_exited"]
