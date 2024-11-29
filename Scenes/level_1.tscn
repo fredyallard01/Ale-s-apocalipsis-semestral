@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c3sr2m8mof4mh" path="res://Assets/Tiles/GreenGround-Objects/rocks1_2.png" id="3_to2pd"]
 [ext_resource type="Texture2D" uid="uid://bjdlrfqqocexa" path="res://Assets/Tiles/GreenGround-Objects/trees2_2.png" id="4_cbo7v"]
 [ext_resource type="PackedScene" uid="uid://c26fdxgxunjir" path="res://Scenes/ale.tscn" id="5_bnnnj"]
-[ext_resource type="Script" path="res://Scenes/barra_de_vida.gd" id="6_81lln"]
 [ext_resource type="PackedScene" uid="uid://bc3pki1p5ib2u" path="res://Scenes/coin_bronze_star.tscn" id="6_e4g0g"]
+[ext_resource type="Script" path="res://Scripts/barra_de_vida.gd" id="6_fuhyw"]
 [ext_resource type="PackedScene" uid="uid://cbqaa1hsunjfx" path="res://Scenes/transition.tscn" id="7_bgyeb"]
 [ext_resource type="PackedScene" uid="uid://dvtv12cvrwhm3" path="res://planta.tscn" id="8_ym8do"]
 
@@ -1330,7 +1330,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_d4uvm")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ef6kt")
 max_value = 50.0
 value = 50.0
-script = ExtResource("6_81lln")
+script = ExtResource("6_fuhyw")
 
 [node name="Coins" type="Node" parent="."]
 
