@@ -151,7 +151,7 @@ animations = [{
 "speed": 7.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 100.0,
 "texture": SubResource("AtlasTexture_7gtfx")
 }, {
 "duration": 1.0,
@@ -192,7 +192,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_flndh")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
 "speed": 7.0
 }]
@@ -204,20 +204,20 @@ size = Vector2(22, 25)
 script = ExtResource("1_vap5o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-11, -24)
+position = Vector2(-13, -24)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_42g7i")
-animation = &"walk"
-frame_progress = 0.00224318
+animation = &"run"
+frame_progress = 0.730023
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-11, -13)
 shape = SubResource("RectangleShape2D_2f04t")
 
 [node name="izquierda" type="RayCast2D" parent="."]
-position = Vector2(-21, -8)
+position = Vector2(-44, -8)
 target_position = Vector2(-200, 0)
 
 [node name="derecha" type="RayCast2D" parent="."]
-position = Vector2(-1, -8)
+position = Vector2(13, -9)
 target_position = Vector2(200, 0)

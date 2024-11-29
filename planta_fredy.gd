@@ -4,6 +4,7 @@ var velocidad: int = 100
 var incrementodevelocidad: int = 500
 var decrementodevelocidad: int = 0
 var perseguir: bool = false
+#$AnimatedSprite2D.play("walk")
 
 func _ready():
 	velocity.x= -velocidad
