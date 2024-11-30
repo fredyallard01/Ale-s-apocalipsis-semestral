@@ -14,8 +14,8 @@ func _process(delta: float) -> void:
 
 func muerte():
 	if position.y > dead:
-		get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
-		coin_script.reset_coins()
+		get_tree().change_scene_to_file("res://Scenes/Game_over.tscn")
+		coin_script.reset()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

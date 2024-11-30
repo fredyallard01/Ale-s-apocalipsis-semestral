@@ -11,7 +11,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func reset_coin(delta: float) -> void:
+	
+func reset():
 	coincount = 0
 
 func _on_interact_body_exited(body: Node2D) -> void:

@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc4qewucqsbxg"]
+
+[ext_resource type="Script" path="res://Scripts/inicio.gd" id="1_mvpoj"]
+[ext_resource type="Texture2D" uid="uid://dn7ftwuhj3jmb" path="res://Assets/Background/Demo.png" id="2_bcxik"]
+[ext_resource type="FontFile" uid="uid://s0m6cskb83jv" path="res://Assets/Fonts/Stranger back in the Night.ttf" id="3_jgrtd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu5bc"]
+bg_color = Color(0.737255, 0.352941, 0.160784, 1)
+
+[node name="Inicio" type="CanvasLayer"]
+script = ExtResource("1_mvpoj")
+
+[node name="Demo" type="Sprite2D" parent="."]
+position = Vector2(575.5, 324)
+scale = Vector2(2.39792, 3.6)
+texture = ExtResource("2_bcxik")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -316.0
+offset_top = 129.0
+offset_right = 368.0
+offset_bottom = 381.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.584314, 0.152941, 0.0588235, 1)
+theme_override_fonts/font = ExtResource("3_jgrtd")
+theme_override_font_sizes/font_size = 252
+text = "Ale murio..."
+
+[node name="Message" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = 97.0
+offset_right = 127.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.439216, 0.184314, 0, 1)
+theme_override_fonts/font = ExtResource("3_jgrtd")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu5bc")
+text = "Vuelve a intentar"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
