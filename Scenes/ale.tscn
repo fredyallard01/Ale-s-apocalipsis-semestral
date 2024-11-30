@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c26fdxgxunjir"]
+[gd_scene load_steps=18 format=3 uid="uid://c26fdxgxunjir"]
 
 [ext_resource type="Script" path="res://Scripts/ale.gd" id="1_6v04e"]
 [ext_resource type="Texture2D" uid="uid://0bxuwopycwwu" path="res://Protagonista/llama_eat.png" id="1_025ia"]
 [ext_resource type="Texture2D" uid="uid://cbcunlvemt082" path="res://Protagonista/llama_walk.png" id="2_va06h"]
+[ext_resource type="Texture2D" uid="uid://dk2cpwiost5gq" path="res://Assets/enemigos/craftpix-net-413641-free-forest-bosses-pixel-art-sprite-sheet-pack/gigante/Hurt2.png" id="4_2lia7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmom8"]
 atlas = ExtResource("1_025ia")
@@ -31,6 +32,22 @@ region = Rect2(128, 384, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wqey"]
 atlas = ExtResource("2_va06h")
 region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77vhk"]
+atlas = ExtResource("4_2lia7")
+region = Rect2(0, 0, 95, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k4ur"]
+atlas = ExtResource("4_2lia7")
+region = Rect2(95, 0, 95, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g6n1"]
+atlas = ExtResource("4_2lia7")
+region = Rect2(190, 0, 95, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p81ii"]
+atlas = ExtResource("4_2lia7")
+region = Rect2(285, 0, 95, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w2hkb"]
 animations = [{
@@ -69,28 +86,39 @@ animations = [{
 "loop": true,
 "name": &"Run",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77vhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k4ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g6n1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p81ii")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_car0u"]
-size = Vector2(44, 34)
+size = Vector2(36, 52)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ef2iv"]
-radius = 8.0
-height = 28.0
-
-[node name="Ale" type="CharacterBody2D"]
+[node name="Ale" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_6v04e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(-13, -20)
+scale = Vector2(0.689474, 0.75)
 sprite_frames = SubResource("SpriteFrames_w2hkb")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 10)
+position = Vector2(-20, -28)
 shape = SubResource("RectangleShape2D_car0u")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(13, -21)
-shape = SubResource("CapsuleShape2D_ef2iv")

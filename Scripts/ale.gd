@@ -1,18 +1,24 @@
 extends CharacterBody2D
 
 
-@export var speed = 300
+@export var speed = 250
 @export var jump = -400
-@export var dead = 1000
+var hitplayer: bool
 
 var gravity= 980
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-func _process(delta):
-	if position.y > dead:
-		get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
+func hit():
+	get_tree().get_nodes_in_group("barravida")[0].disminuirVida(30)
 
 
+func death():
+	set_physics_process(false)
+	$AnimatedSprite2D.play("damage")
+	await $AnimatedSprite2D.animation_finished
+	queue_free()
+	
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
