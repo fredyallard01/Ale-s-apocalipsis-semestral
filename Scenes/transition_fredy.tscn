@@ -1,19 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbqaa1hsunjfx"]
+[gd_scene load_steps=4 format=3 uid="uid://cyagu1ce6jebe"]
 
-[ext_resource type="Script" path="res://transition_para_nivel_3.gd" id="1_l4unu"]
-[ext_resource type="Texture2D" uid="uid://b5xm4ptsda81c" path="res://Assets/Tiles/GreenGround-Objects/pointer.png" id="2_33dlr"]
+[ext_resource type="Script" path="res://transition.gd" id="1_5bvek"]
+[ext_resource type="Texture2D" uid="uid://b5xm4ptsda81c" path="res://Assets/Tiles/GreenGround-Objects/pointer.png" id="2_u7bh0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a17ad"]
-size = Vector2(26, 52)
+size = Vector2(26, 108)
 
 [node name="transition" type="Area2D"]
-script = ExtResource("1_l4unu")
+script = ExtResource("1_5bvek")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -28)
 shape = SubResource("RectangleShape2D_a17ad")
 
 [node name="Pointer" type="Sprite2D" parent="."]
 position = Vector2(-1, 1)
-texture = ExtResource("2_33dlr")
+texture = ExtResource("2_u7bh0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

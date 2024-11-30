@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://c26fdxgxunjir"]
 
-[ext_resource type="Script" path="res://Scripts/ale.gd" id="1_6v04e"]
 [ext_resource type="Texture2D" uid="uid://0bxuwopycwwu" path="res://Protagonista/llama_eat.png" id="1_025ia"]
+[ext_resource type="Script" path="res://Scripts/ale_fredy.gd" id="1_g52tf"]
 [ext_resource type="Texture2D" uid="uid://cbcunlvemt082" path="res://Protagonista/llama_walk.png" id="2_va06h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmom8"]
@@ -79,7 +79,7 @@ radius = 12.0
 height = 38.0
 
 [node name="Ale" type="CharacterBody2D"]
-script = ExtResource("1_6v04e")
+script = ExtResource("1_g52tf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

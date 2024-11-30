@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://dvtv12cvrwhm3"]
 
+[ext_resource type="Script" path="res://planta_fredy.gd" id="1_eb5dl"]
 [ext_resource type="Texture2D" uid="uid://c00l3kl8amwo" path="res://Assets/enemigos/craftpix-net-413641-free-forest-bosses-pixel-art-sprite-sheet-pack/planta/Attack1.png" id="1_u2qg3"]
-[ext_resource type="Script" path="res://planta.gd" id="1_vap5o"]
 [ext_resource type="Texture2D" uid="uid://b6fuwi56jnnkj" path="res://Assets/enemigos/craftpix-net-413641-free-forest-bosses-pixel-art-sprite-sheet-pack/planta/Attack2.png" id="2_7m00l"]
 [ext_resource type="Texture2D" uid="uid://c0aklynvovfav" path="res://Assets/enemigos/craftpix-net-413641-free-forest-bosses-pixel-art-sprite-sheet-pack/planta/Attack3.png" id="3_k727p"]
 [ext_resource type="Texture2D" uid="uid://c73gxos1c6yuc" path="res://Assets/enemigos/craftpix-net-413641-free-forest-bosses-pixel-art-sprite-sheet-pack/planta/Walk.png" id="4_84f64"]
@@ -123,7 +123,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_efyye")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1",
 "speed": 7.0
 }, {
@@ -151,7 +151,7 @@ animations = [{
 "speed": 7.0
 }, {
 "frames": [{
-"duration": 100.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7gtfx")
 }, {
 "duration": 1.0,
@@ -169,7 +169,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h1thc")
 }],
-"loop": true,
+"loop": false,
 "name": &"run",
 "speed": 7.0
 }, {
@@ -201,23 +201,22 @@ animations = [{
 size = Vector2(22, 25)
 
 [node name="planta" type="CharacterBody2D"]
-script = ExtResource("1_vap5o")
+script = ExtResource("1_eb5dl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-13, -24)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_42g7i")
-animation = &"run"
-frame_progress = 0.730023
+animation = &"attack1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-11, -13)
 shape = SubResource("RectangleShape2D_2f04t")
 
 [node name="izquierda" type="RayCast2D" parent="."]
-position = Vector2(-44, -8)
-target_position = Vector2(-200, 0)
+position = Vector2(-69, -8)
+target_position = Vector2(-109, 0)
 
 [node name="derecha" type="RayCast2D" parent="."]
 position = Vector2(13, -9)
-target_position = Vector2(200, 0)
+target_position = Vector2(109, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bpwuwfrl1fsyt"]
+[gd_scene load_steps=35 format=4 uid="uid://bpwuwfrl1fsyt"]
 
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_85mpb"]
 [ext_resource type="Texture2D" uid="uid://b1p6ldkd3afd2" path="res://Assets/Tiles/GreenGround-Tiles/GreenGround-tilesheet.png" id="1_xott5"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://cwmr50q5axmtm" path="res://Assets/Tiles/GreenGround-Objects/trees1_5.png" id="11_1dvgq"]
 [ext_resource type="Texture2D" uid="uid://bis34uy32cnnf" path="res://Assets/Tiles/GreenGround-Objects/trees1_2.png" id="12_8yrlx"]
 [ext_resource type="PackedScene" uid="uid://dvtv12cvrwhm3" path="res://planta.tscn" id="14_nux1q"]
+[ext_resource type="PackedScene" uid="uid://cbqaa1hsunjfx" path="res://Scenes/transition.tscn" id="17_q4ycw"]
+[ext_resource type="PackedScene" uid="uid://cb4no4o4i12v5" path="res://Scenes/transition_fin_del_juego.tscn" id="18_bdg1v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e61mo"]
 texture = ExtResource("1_xott5")
@@ -1714,9 +1716,6 @@ sources/4 = SubResource("TileSetAtlasSource_pe27q")
 sources/5 = SubResource("TileSetAtlasSource_5uymx")
 sources/6 = SubResource("TileSetAtlasSource_v43k0")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7ox7"]
-size = Vector2(30, 138)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4y32"]
 size = Vector2(5753, 94)
 
@@ -1790,11 +1789,7 @@ position = Vector2(894, 501)
 frame_progress = 0.408518
 
 [node name="transition" type="Area2D" parent="."]
-position = Vector2(5884, 527)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="transition"]
-position = Vector2(13, -38)
-shape = SubResource("RectangleShape2D_g7ox7")
+position = Vector2(6012, 443)
 
 [node name="interact" type="Area2D" parent="."]
 
@@ -1806,6 +1801,12 @@ shape = SubResource("RectangleShape2D_s4y32")
 
 [node name="planta" parent="." instance=ExtResource("14_nux1q")]
 position = Vector2(354, 567)
+
+[node name="transition2" parent="." instance=ExtResource("17_q4ycw")]
+position = Vector2(5898, 533)
+
+[node name="transition3" parent="." instance=ExtResource("18_bdg1v")]
+position = Vector2(5093, 536)
 
 [connection signal="body_entered" from="transition" to="." method="_on_transition_body_entered"]
 [connection signal="body_exited" from="interact" to="." method="_on_interact_body_exited"]
